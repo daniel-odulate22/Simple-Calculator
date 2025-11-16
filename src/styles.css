@@ -2,109 +2,166 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
 }
-
 body {
-  background-color: black;
-}
-
-.text-white {
-  color: white;
-  margin-top: 10px;
-  font-size: 1.1rem;
-}
-
-.container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5rem;
-}
-
-.calculator {
-  width: 550px;
-}
-
-.display-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.display {
-  width: 75%;
-}
-
-.other-btns {
-  width: 24%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 18px 12px;
 }
-
-.other-btns > button {
-  height: 100px;
-  width: 100%;
-}
-
-.AC-btn {
-  margin-top: 10px;
-}
-
-.input-field,
-.answer-field {
-  width: 100%;
-  height: 100px;
-  padding: 20px;
-  font-size: 40px;
-  border: none;
-  border-radius: 5px;
-  background: white;
-  text-align: left;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-.answer-field {
-  margin-top: 10px;
-}
-
-.btn-wrapper {
-  margin-top: 10px;
-}
-
-.btn-container {
-  margin-top: 5px;
-  width: 100%;
+.calculator {
+  width: 560px;
+  max-width: 95vw;
+  background: transparent; 
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 6px 0 14px 0;
+  color: #f3f0ec;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Display --- */
+.display-container {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.input-field {
+  font-size: 1.5rem;
+  color: #888;
+  height: 30px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.answer-field {
+  font-size: 3rem;
+  color: #ffffff;
+  height: 60px;
+  line-height: 1.2;
+}
+.display-container .answer-field {
+  background-color: rgba(255,255,255,0.06);
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-align: right;
+}
+.keypad-container {
+  background-color: #5d4037; 
+  padding: 28px;
+  border-radius: 28px;
+  width: 100%;
+  max-width: 560px;
+  min-height: 460px; 
+  box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* --- Buttons --- */
 button {
-  width: 24%;
-  height: 100px;
-  padding: 20px;
-  font-size: 30px;
-  background: white;
+  width: 100%;
+  height: 64px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  background-color: #ffffff;
   border: none;
-  border-radius: 5px;
-}
-
-.colored-btn {
-  background-color: aqua;
-  color: black;
-}
-
-.colored-btn:active {
-  background-color: chocolate;
-  color: white;
-}
-
-.span-two {
-  width: 50%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.12s ease, transform 0.08s ease;
 }
 
 button:active {
-  background: lightgray;
+  background-color: #dcdcdc;
+  transform: scale(0.95);
+}
+
+/* Numbers (0-9) */
+.btn-number {
+  background-color: #efebe9; 
+  color: #3e2723;
+}
+.btn-number:active {
+  background-color: #d7ccc8;
+}
+
+/* Operators (+, -, *, /) */
+.btn-operator {
+  background-color: #d7ccc8; 
+  color: #5d4037;
+  font-size: 2rem;
+}
+.btn-operator:active {
+  background-color: #bcaaa4;
+}
+
+/* Clear and delete buttons */
+.btn-function {
+  background-color: #a1887f;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+.btn-function:active {
+  background-color: #8d6e63;
+}
+/* Equals button */
+.btn-equals {
+  grid-column: span 2;
+  background-color: #a1887f;
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+.btn-equals:active {
+  background-color: #8d6e63;
+}
+.btn-zero {
+  grid-column: span 2; 
+}
+.btn-dummy {
+  background-color: #6d4c41; 
+  color: #4e342e;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+.btn-dummy:active {
+  background-color: #6d4c41;
+  transform: scale(1);
+}
+
+/*footer*/
+.copyright {
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 14px 0 6px 0;
+  color: #bfb3a8;
 }
