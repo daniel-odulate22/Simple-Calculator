@@ -4,13 +4,13 @@ This is a simple calculator app built using React. It performs basic arithmetic 
 
 ## Features
 
-- Addition, subtraction, multiplication, and division operations.
+- Addition, subtraction, multiplication, division, and percentage operations.
 - Responsive design for various screen sizes.
 - Clear button to reset the calculator.
 
 ## Demo
 
-See the live project in action: https://react-js-simple-calculator.netlify.app/
+See the live project in action: https://daniel-simple-calculator.vercel.app/
 
 ## Technologies Used
 
@@ -23,7 +23,7 @@ See the live project in action: https://react-js-simple-calculator.netlify.app/
 
 To get a local copy up and running, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/DevAbdurR/Simple-Calulator`
+1. Clone this repository: `git clone https://github.com/daniel-odulate22/Simple-Calulator`
 2. Navigate to the project directory: `cd simple-calculator`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
@@ -33,5 +33,3 @@ To get a local copy up and running, follow these steps:
 1. Click the buttons to input numbers and operators.
 2. Click "=" to get the result of the calculation.
 3. Click "AC" to clear the input and reset the calculator.
-
-This project was developed to practice building a React application. Feel free to explore and modify the code to learn more about React development!
